@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+. ~/.git-prompt.sh
+
 # This prompt is a heavily modified version of https://github.com/ohmybash/oh-my-bash/tree/master/themes/lambda
 # The prompt looks like this (given youre in a virtualenv setup with git)
 # ╭─  virtualenv 󰣇 user@host ~/directory ( branch) -------  09:00:00 ─┤
