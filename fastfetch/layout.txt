@@ -1,0 +1,30 @@
+user@host
+
+╭─󰣇  DISTRO
+├─  KERNAL
+├─  BIOS
+├─  BOOTMGR
+├─  INITSYSTEM
+├─  PACKAGES
+├─  DE
+├─  WM
+├─󰍂  LM
+├─?  FFVERSION
+╰─  OS AGE
+
+╭─  TERMINAL
+├─  SHELL
+├─  WIFI
+├─󰊴  GAMEPAD
+├─  SOUND
+╰─  UPTIME
+
+╭─󰌢  BOARD
+├─  CPU
+├─󰒓  GPU
+├─  RAM
+├─󰓡  SWAP
+├─󰂎  BATTERY
+├─󰋊  DISKS
+├─󰍹  DISPLAY
+╰─  DATETIME
