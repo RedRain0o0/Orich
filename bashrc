@@ -6,6 +6,12 @@
 # ╭─  virtualenv 󰣇 user@host ~/directory ( branch) -------  09:00:00 ─┤
 # ╰─❯ echo Hello, world!
 
+# Colors
+color_reset=\\[\\033[0m\\]
+color_purple_bold=\\[\\033[01\;35m\\]
+color_green_bold=\\[\\033[01\;32m\\]
+color_teal_bold=\\[\\033[01\;96m\\]
+color_red_bold=\\[\\033[01\;31m\\]
 
 # Prompt Customization
 icon_start="╭─ "
@@ -37,13 +43,14 @@ PS1='\[$(printf "%*s" $(($(tput cols)-14)) "" | sed "s/ /-/g")'$icon_time'\r'
 # Header + VENV
 PS1+=$icon_start${VENV}
 # Distro and user@host
-PS1+=$icon_distro$_omb_prompt_bold_brown'\u'$_omb_prompt_normal$icon_host$_omb_prompt_bold_teal'\h'
+PS1+=$icon_distro$color_red_bold'\u'$color_reset$icon_host$color_teal_bold'\h'
 # Directory
-PS1+=$_omb_prompt_normal$icon_directory$_omb_prompt_bold_purple'\w '
+PS1+=$color_reset$icon_directory$color_purple_bold'\w '
 # Git branch
-PS1+=$_omb_prompt_normal$(__git_ps1 "("$icon_branch" %s) ")
+PS1+=$color_reset'$(__git_ps1 "("$icon_branch" %s) ")'
 # Footer
 PS1+='\n'$icon_end
+
 PS2=$icon_end
 
 #function cd {
