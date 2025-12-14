@@ -2,8 +2,8 @@
 
 :root {
     container-name: root;
-    --custom-guild-list-padding: 12px;
-    --panel-backdrop-filter: none;
+    //--custom-guild-list-padding: 12px;
+    //--panel-backdrop-filter: none;
 
-    --border-hover: var(--border-subtle);
+    //--border-hover: var(--border-subtle);
 }
