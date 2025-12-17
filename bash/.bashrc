@@ -82,8 +82,20 @@ alias nf='clear; fastfetch'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias sysup='yay; flatpak upgrade'
+alias bashup='source ~/.bashrc'
 alias lst='trash-list'
 alias cls='clear'
+stow() { stow -t ~ "$@"; }
 rm() { trash "$@"; }
 ytdl() { yt-dlp -x --audio-format mp3 "$@"; }
 unimatrix() { command unimatrix -c green -u $katakana -s 95 "$@"; }
+
+# pnpm
+export PNPM_HOME="/home/ori/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
