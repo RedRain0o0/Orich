@@ -1,7 +1,8 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-  "source": "/home/ori/.config/fastfetch/logo.txt",
+    "source": "/home/ori/.config/fastfetch/logo.txt",
+    "color": {"1": "#FF999B"},
     "padding": {
       "top": 2,
       "left": 4,
@@ -9,152 +10,170 @@
     }
   },
   "display": {
-    "separator": "  "
+    "separator": "",
+    "constants": [
+      "",                          // 1
+      "",                          // 2
+      // Foreground @253
+      "\u001b[38;5;253m",           // 3
+      // Background @253
+      "\u001b[48;5;253m",           // 4
+      // Foreground #FF999B
+      "\u001b[38;2;255;153;155m",   // 5
+      // Background #FF999B
+      "\u001b[48;2;255;153;155m",   // 6
+      // Foreground @255
+      "\u001b[38;5;255m",           // 7
+      // Background @255
+      "\u001b[48;5;255m",           // 8
+      // Foreground @235
+      "\u001b[38;5;235m",           // 9
+      // Background @235
+      "\u001b[48;5;235m",           // 10
+      // Foreground @245
+      "\u001b[38;5;245m",           // 11
+      // Background @245
+      "\u001b[48;5;245m",           // 12
+      // Foreground @178
+      "\u001b[38;5;178m",           // 13
+      // Background @178
+      "\u001b[48;5;178m",           // 14
+      // Foreground @63
+      "\u001b[38;5;63m",            // 15
+      // Background @63
+      "\u001b[48;5;63m",            // 16
+      // Foreground @70
+      "\u001b[38;5;70m",            // 17
+      // Background @70
+      "\u001b[48;5;70m",            // 18
+      "╭─",
+      "├─",
+      "╰─"
+    ]
   },
   "modules": [
     {
-      "type": "title"
+      "type": "title",
+      "key": "{$11}│   {$5}{$1}{$7}{$6}{$5}{$4}{$2}",
+      "format": "{$9}{$4} {user-name}@{host-name}{#}{$3}{$2}"
     },
-    "break",
+    {
+      "type": "custom",
+      "key": "{$11}│"
+    },
     {
       "type": "os",
-      "key": "╭─󰣇",
-      "keyColor": "green"
+      "key": "{$11}│   {$15}{$19}󰣇 ",
+      "format": "{$3}{$1}{#}{$9}{$4}{3} ({12}){#}{$3}{$2}"
     },
     {
       "type": "kernel",
-      "key": "├─",
-      "keyColor": "green"
-    },
-    {
-      "type": "bios",
-      "key": "├─",
-      "keyColor": "green"
-    },
-    {
-      "type": "bootmgr",
-      "key": "├─",
-      "keyColor": "green"
-    },
-    {
-      "type": "initsystem",
-      "key": "├─",
-      "keyColor": "green"
+      "key": "{$11}│   {$15}{$20} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1} ({2}){#}{$3}{$2}"
     },
     {
       "type": "packages",
-      "key": "├─",
-      "keyColor": "green"
+      "key": "{$11}│   {$15}{$20} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{2} (󰮯 ), {flatpak-all} ( ){#}{$3}{$2}"
     },
     {
       "type": "de",
-      "key": "├─",
-      "keyColor": "green"
+      "key": "{$11}│   {$15}{$20} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{2} ({3}){#}{$3}{$2}"
     },
     {
       "type": "wm",
-      "key": "├─",
-      "keyColor": "green"
-    },
-    {
-      "type": "lm",
-      "key": "├─󰍂",
-      "keyColor": "green"
-    },
-    {
-      "type": "version",
-      "key": "├─",
-      "keyColor": "green"
+      "key": "{$11}│   {$15}{$20} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{2} ({3}){#}{$3}{$2}"
     },
     {
       "type": "command",
-      "key": "╰─",
-      "keyColor": "green",
-      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+      "key": "{$11}│   {$15}{$21} ",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo \"$days_difference days\"",
+      "format": "{$3}{$1}{#}{$9}{$4}{}{#}{$3}{$2}"
     },
-    "break",
+    {
+      "type": "custom",
+      "key": "{$11}│"
+    },
     {
       "type": "terminal",
-      "key": "╭─",
-      "keyColor": "blue"
+      "key": "{$11}│   {$13}{$19} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{5} ({6}){#}{$3}{$2}"
     },
     {
       "type": "shell",
-      "key": "├─",
-      "keyColor": "blue"
-    },
-    {
-      "type": "wifi",
-      "key": "├─󰤯",
-      "keyColor": "blue"
-    },
-    {
-      "type": "sound",
-      "key": "├─",
-      "keyColor": "blue"
-    },
-    {
-      "type": "gamepad",
-      "key": "├─󰊴",
-      "keyColor": "blue"
+      "key": "{$11}│   {$13}{$20} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{6} ({4}){#}{$3}{$2}"
     },
     {
       "type": "uptime",
-      "key": "╰─",
-      "keyColor": "blue"
+      "key": "{$11}│   {$13}{$21} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{10}{#}{$3}{$2}"
     },
-    "break",
     {
-      "type": "board",
-      "key": "╭─󰌢",
-      "keyColor": "yellow"
+      "type": "custom",
+      "key": "{$11}│"
     },
     {
       "type": "cpu",
-      "key": "├─",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$19} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1} ({6}){#}{$3}{$2}"
     },
     {
       "type": "gpu",
-      "key": "├─󰒓",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$20}󰒓 ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1} {2} ({6}){#}{$3}{$2}"
     },
     {
       "type": "memory",
-      "key": "├─",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$20} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1} / {2} ({3}{$9}{$4}){#}{$3}{$2}"
     },
     {
       "type": "swap",
-      "key": "├─󰓡",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$20}󰓡 ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1} / {2} ({3}{$9}{$4}){#}{$3}{$2}"
     },
     {
       "type": "battery",
-      "key": "├─󰂎",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$20}󰂎 ",
+      "format": "{$3}{$1}{#}{$9}{$4}{4}{#}{$3}{$2}"
     },
     {
       "type": "disk",
-      "key": "├─󰋊",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$20}󰋊 ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1} / {2} ({9}){#}{$3}{$2}"
     },
     {
       "type": "display",
-      "key": "├─󰍹",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$20}󰍹 ",
+      "format": "{$3}{$1}{#}{$9}{$4}{1}x{2}, {12}\" ({3} Hz){#}{$3}{$2}"
     },
     {
       "type": "datetime",
-      "key": "╰─",
-      "keyColor": "yellow"
+      "key": "{$11}│   {$17}{$21} ",
+      "format": "{$3}{$1}{#}{$9}{$4}{14}:{18}:{20} | {11}-{4}-{1}{#}{$3}{$2}"
     },
-    "break",
+    {
+      "type": "custom",
+      "key": "{$11}│"
+    },
     {
       "type": "colors",
-      "paddingLeft": 5//,
-      //"symbol": "square"
+      "key": "{$11}│   ",
+      "symbol": "block",
+      "block": {"width": 2, "range": [0, 7]}
     },
-    "break"
+    {
+      "type": "colors",
+      "key": "{$11}│   ",
+      "symbol": "block",
+      "block": {"width": 2, "range": [8, 15]}
+    },
+    {
+      "type": "custom",
+      "key": "{$11}│"
+    }
   ]
 }

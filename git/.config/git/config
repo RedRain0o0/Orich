@@ -1,0 +1,24 @@
+[user]
+  name = Ori
+  email = redraino.o.o.o.o@gmail.com
+
+[core]
+  compression = 9
+  whitespace = error
+  preloadindex = true
+
+[url "git@github.com:redrain0o0/"]
+  insteadOf = "rr:"
+
+[url "git@github.com:bitmotte/"]
+  insteadOf = "bm:"
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
+
+[url "git@codeberg.org:"]
+  insteadOf = "cb:"
+
+[status]
+  branch = true
+  showStash = true

@@ -29,7 +29,7 @@ countMyMonsterAddiction() {
     echo You\'ve downed $newCount White Monster Energies!
 }
 
-
+# This prompt is a heavily modified version of https://github.com/ohmybash/oh-my-bash/tree/master/themes/lambda
 # The prompt looks like this (given youre in a virtualenv setup with git)
 # ╭─  virtualenv 󰣇 user@host ~/directory ( branch) -------  09:00:00 ─┤
 # ╰─❯ echo Hello, world!
@@ -78,8 +78,10 @@ cursor_color() {
     fi
 }
 
+# Spacers + Time
+PS1=$color_darkgray'\[$(printf "%*s" $(($(tput cols)-14)) "" | sed "s/ /-/g") '$icon_time' \t '$color_reset$icon_trbar'\r'
 # Header + VENV
-PS1=$icon_tlbar${VENV}
+PS1+=$icon_tlbar${VENV}
 # Distro and user@host
 PS1+=$icon_distro' '$color_red_bold'\u'$color_reset$icon_host$color_teal_bold'\h'
 # Directory
@@ -97,7 +99,7 @@ PS2=$icon_blbar$icon_input' '
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias nf='clear; fastfetch'
+alias nf='clear; seq 0 $(($(tput cols)-1)) | sort -R | spark; echo; fastfetch'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias sysup='yay; flatpak upgrade'
@@ -125,7 +127,7 @@ alias monster='countMyMonsterAddiction'
 # On Startup
 mpdnotify start
 clear
-#seq 0 $(($(tput cols)-1)) | sort -R | spark
+seq 0 $(($(tput cols)-1)) | sort -R | spark
 echo
 fastfetch
 remind
@@ -139,4 +141,3 @@ esac
 
 # Created by `pipx` on 2026-01-14 01:33:54
 export PATH="$PATH:/home/ori/.local/bin"
-if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi

@@ -1,0 +1,22 @@
+if [[ $(ls -A | head -c1 | wc -c) -ne 0 ]]; then ...; fi
+
+
+if (gitstatus) then
+    draw with git
+else
+    draw without
+fi
+
+
+
+set-option -g status-right "\
+#(if [[ $(gitmux '#{pane_current_path}') ]]; then echo \"\
+#[fg=colour255, bg=default]\
+#[fg=colour235, bg=colour255]$(gitmux -cfg $HOME/.gitmux.conf '#{pane_current_path}')\
+#[fg=colour253, bg=colour255]\" else echo \"\
+#[fg=colour253, bg=default]\" fi)\
+#[fg=colour235, bg=colour253]%b %d %y\
+#[fg=colour210] \
+#[fg=colour255, bg=colour210]%a %H:%M "
+
+

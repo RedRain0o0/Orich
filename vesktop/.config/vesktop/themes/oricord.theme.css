@@ -1,0 +1,21 @@
+/**
+ * @name Oricord
+ * @description Ori's theme for discord
+ * @author RedRain0o0
+ * @authorId 473309618081234945
+ * @authorLink https://redrain0o0.github.io
+ * @version 0.1.0
+ * @source https://github.com/RedRain0o0/Orich
+*/
+
+@import url('https://redrain0o0.github.io/raw/assets/orich/oricord.css');
+
+body {
+  /* top bar options */
+  --move-top-bar-buttons: off; /* turn on to move inbox button to the server list (recommend setting top bar height to 24px) */
+  --custom-app-top-bar-height: 32px; /* height of the titlebar/top bar (default is 36px)*/
+
+  /* window controls */
+  --custom-window-controls: on; /* turn off to use discord default window controls */
+  --window-control-size: 14px; /* size of custom window controls */
+}

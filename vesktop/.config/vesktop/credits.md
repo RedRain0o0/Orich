@@ -1,0 +1,1 @@
+This theme (and also the design language of the rest of this rice) is inspired by [Midnight Discord](https://github.com/refact0r/midnight-discord)'s rounded floating ui.
